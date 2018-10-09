@@ -1,0 +1,131 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: sans-serif;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(125, 126, 125, 1) 0%, rgba(14, 14, 14, 1) 100%) center center no-repeat;
+
+}
+
+.title {
+
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.item {
+    margin: 40px 10px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px black;
+    transition: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+.item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.itemBody {
+    padding: 25px;
+}
+
+.itemTitle {
+    color: #232323;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.itemDescription {
+    color: #585858;
+}
+
+.items {
+    position: relative;
+}
+
+/*   Carousel  */
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    outline-color: transparent;
+}
+
+.carouselContainer {
+    transition: transform 0.3s;
+    transform: translate3d(0, 0, 0);
+}
+
+.carouselContainer::after {
+    content: "";
+    clear: both;
+    display: table;
+
+}
+
+.carouselItem {
+    float: left;
+}
+
+.carouselNext, .carouselPrev {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(200, 200, 200, 0.6) center center no-repeat;
+    border-radius: 50%;
+    top: 50%;
+    left: auto;
+    right: 0;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+.carouselPrev {
+    right: auto;
+    left: 0;
+}
+
+.carouselPagination {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.carouselPaginationButton {
+    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 2px black;
+    margin: 0 3px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.carouselPaginationButton-active, .carouselPaginationButton:hover {
+    transform: scale(1.4);
+}
+
+@media screen and (min-width: 800px) {
+    .carouselPagination {
+        display: block;
+    }
+}
